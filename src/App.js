@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext, useEffect } from 'react';
+import CountriesContext from './context/index';
+
+// components
+import Loader from './components/Loader';
+import CountriesList from './components/CountriesList';
 
 function App() {
+  const { isLoading, fetchCountries } = useContext(CountriesContext);
+
+
+  useEffect(() => {
+    console.log(isLoading);
+    fetchCountries();
+  },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      { isLoading ?
+        <Loader />
+        :
+        <CountriesList />
+      }
     </div>
   );
 }
