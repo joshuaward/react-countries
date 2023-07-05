@@ -1,0 +1,47 @@
+section {
+  width: 100%;
+  .section__inner {
+    position: relative;
+  }
+  &.section--sm {
+    & > .section__inner {
+      @include container($max: $maxWidthSm);
+    }
+  }
+  &:not(.section--sm) {
+    & > .section__inner {
+      @include container;
+    }
+  }
+
+  &.section--split {
+    & > .section__inner {
+      @include mq(lg) {
+        display: flex;
+
+        & > .section__main,
+        & > .section__rail {
+          overflow: hidden;
+          margin: 0 #{math.div($gutterLg, 2)};
+          &:nth-child(1) {
+            margin-left: 0;
+          }
+          &:nth-child(2) {
+            margin-right: 0;
+          }
+          &:only-child {
+            margin: 0;
+          }
+        }
+
+        & > .section__main {
+          flex: 1 1 calc(100% - #{math.div($gutterLg, 2)});
+        }
+
+        & > .section__rail {
+          flex: 0 0 calc(22rem - #{math.div($gutterLg, 2)});
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max-content, 1fr));
+  gap: 0;
+  grid-auto-flow: dense;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.grid__item {
+  grid-column: span 1 / span 1;
+  grid-row: span 1 / span 1;
+  & > *,
+  & > blue-component > * {
+    max-width: 100%;
+  }
+  .grid--match-height & {
+    display: flex;
+    & > *,
+    & > blue-component > * {
+      height: auto;
+      align-self: stretch;
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.grid {
+  @each $size, $value in $gridGaps {
+    &--gap-#{$size} {
+      gap: #{$value};
+    }
+  }
+	@each $size, $value in $gridGaps {
+    &--gap-x-#{$size} {
+      row-gap: #{$value};
+    }
+  }
+  @each $size, $value in $gridGaps {
+    &--gap-y-#{$size} {
+      column-gap: #{$value};
+    }
+  }
+  @for $i from 1 through $gridColumns {
+    &--cols-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+    &__item {
+      &--col-span-#{$i} {
+        grid-column: span #{$i} / span #{$i};
+      }
+      &--row-span-#{$i} {
+        grid-row: span #{$i} / span #{$i};
+      }
+    }
+  }
+  @for $i from 1 through $gridColumns {
+    &__item {
+      &--col-start-#{$i} {
+        grid-column-start: #{$i};
+      }
+      &--col-end-#{$i} {
+        grid-column-end: #{$i};
+      }
+    }
+  }
+  @each $name, $width in $gridBreakpoints {
+    @media (min-width: $width) {
+      @each $size, $value in $gridGaps {
+        &--gap-#{$name}#{$size} {
+          gap: #{$value};
+        }
+      }
+      @each $size, $value in $gridGaps {
+        &--gap-x-#{$name}#{$size} {
+          row-gap: #{$value};
+        }
+      }
+      @each $size, $value in $gridGaps {
+        &--gap-y-#{$name}#{$size} {
+          column-gap: #{$value};
+        }
+      }
+      @for $i from 1 through $gridColumns {
+        &--cols-#{$name}#{$i} {
+          grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+        }
+        &__item {
+          &--col-span-#{$name}#{$i} {
+            grid-column: span #{$i} / span #{$i};
+          }
+          &--row-span-#{$name}#{$i} {
+            grid-row: span #{$i} / span #{$i};
+          }
+        }
+      }
+      @for $i from 1 through $gridColumns {
+        &__item {
+          &--col-start-#{$name}#{$i} {
+            grid-column-start: #{$i};
+          }
+          &--col-end-#{$name}#{$i} {
+            grid-column-end: #{$i};
+          }
+        }
+      }
+    }
+  }
+}

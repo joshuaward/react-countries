@@ -1,0 +1,94 @@
+// --------------------------------------------
+// General typography styles
+// --------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+hr,
+ul,
+ol,
+dl,
+blockquote,
+p,
+address,
+figure,
+pre {
+  margin: 0 0 $marginBase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $fontFamilyHeadings;
+  font-weight: $fontWeightHeadings;
+  line-height: $lineHeightHeadings;
+}
+
+h1,
+.h1 {
+  font-size: $h1Size;
+}
+
+h2,
+.h2 {
+  font-size: $h2Size;
+}
+
+h3,
+.h3 {
+  font-size: $h3Size;
+}
+
+h4,
+.h4 {
+  font-size: $h4Size;
+}
+
+h5,
+.h5 {
+  font-size: $h5Size;
+}
+
+h6,
+.h6 {
+  font-size: $h6Size;
+}
+
+hr {
+  margin-top: $marginBase;
+  border: none;
+  border-top: 1px solid;
+}
+
+a {
+  transition: all 0.25s ease-in-out;
+  color: $linkColor;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  &:hover {
+    color: $linkColorHover;
+    text-decoration: underline;
+  }
+}
+
+[class^='glyph-'],
+[class*=' glyph-'] {
+  &::before {
+    @include icon;
+  }
+}

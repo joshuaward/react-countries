@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react';
 import axios from 'axios';
 
-const CountriesContext = createContext();
+const CountryContext = createContext();
 
 const CountriesProvider = ({ children }) => {
 	const endpoint = 'https://restcountries.com/v3.1/all?fields=name,flag,flags,capital,maps,region,population,';
@@ -24,11 +24,11 @@ const CountriesProvider = ({ children }) => {
 	}
 
 	return(
-		<CountriesContext.Provider value={ values }>
+		<CountryContext.Provider value={ values }>
 			{ children }
-		</CountriesContext.Provider>
+		</CountryContext.Provider>
 	);
 }
 
 export { CountriesProvider };
-export default CountriesContext;
+export default CountryContext;

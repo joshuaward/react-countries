@@ -1,0 +1,17 @@
+
+
+.countries {
+
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		margin: 0 auto;
+		@media (min-width: 768px) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@media (min-width: 1024px) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+}

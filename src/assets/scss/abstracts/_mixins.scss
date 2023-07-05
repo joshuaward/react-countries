@@ -1,0 +1,97 @@
+// -----------------------------------------------------------------------------
+// Use this file to store any mixins you may need/create for the project
+// -----------------------------------------------------------------------------
+
+%btn {
+  appearance: none;
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  color: $buttonPrimaryColor;
+  background: $buttonPrimaryBackground;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 0px;
+  transition: 0.25s ease;
+  text-transform: uppercase;
+
+  &.disabled,
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.65;
+  }
+  &:hover {
+    background: $buttonPrimaryBackgroundHover;
+    color: $buttonPrimaryColorHover;
+  }
+}
+
+%btn--ghost {
+  background: transparent;
+  border-color: $buttonPrimaryBackground;
+  color: $buttonPrimaryBackground;
+  &:hover {
+    background: $buttonPrimaryBackgroundHover;
+    border-color: $buttonPrimaryBackgroundHover;
+    color: $buttonPrimaryColorHover;
+  }
+}
+
+%btn--secondary {
+  background: $buttonSecondaryBackground;
+  color: $buttonSecondaryColor;
+  &:hover {
+    background: $buttonSecondaryBackgroundHover;
+    color: $buttonSecondaryColorHover;
+  }
+  &.btn--ghost {
+    background: transparent;
+    border-color: $buttonSecondaryBackground;
+    color: $buttonSecondaryBackground;
+    &:hover {
+      border-color: $buttonSecondaryBackgroundHover;
+      background: $buttonSecondaryBackgroundHover;
+      color: $buttonSecondaryColorHover;
+    }
+  }
+}
+
+%glyph-loading {
+  display: inline-grid;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  &:after {
+    content: '';
+    grid-area: 1 / 1 / 2 / 2;
+    align-self: center;
+    justify-self: center;
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    border: 0.25em solid transparent;
+    border-top-color: currentColor;
+    z-index: 2;
+    animation: glyph-loading 1s ease infinite;
+  }
+  &:before {
+    content: '';
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1 / 2 / 2;
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    border: 0.25em solid currentColor;
+    opacity: 0.5;
+    z-index: 1;
+  }
+}

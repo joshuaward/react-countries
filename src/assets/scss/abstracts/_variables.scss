@@ -1,0 +1,156 @@
+/*******************************************
+******* GLOBAL OVERRIDES *******************
+**** You can reassign these global *********
+**** defaults by un-commenting the *********
+**** variables below & giving them *********
+**** new values. The comments show *********
+**** the default values.           *********
+*******************************************/
+// $rootEM: 16px !default;
+
+// $success: #5ac18e !default;
+// $warning: #ffd700 !default;
+// $error: #ff6666 !default;
+
+// $minWidth: 20rem !default;
+// $maxWidth: 82rem !default;
+// $maxWidthSm: 64rem !default;
+// $gutter: 2rem !default;
+// $gutterSm: math.div($gutter, 2) !default;
+// $gutterXs: math.div($gutter, 4) !default;
+// $gutterLg: $gutter * 1.5 !default;
+// $gutterXl: $gutter * 2 !default;
+// $marginBase: 1.5rem !default;
+
+// $gridColumns: 12 !default;
+// $gridBreakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+// ) !default;
+
+// $gridGaps: (
+//   '0': 0,
+//   '05': $gutterXs,
+//   '1': $gutterSm,
+//   '2': $gutter,
+//   '3': $gutterLg,
+//   '4': $gutterXl,
+// ) !default;
+
+// $breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   sm_dn: 575px,
+//   md_dn: 767px,
+//   lg_dn: 991px,
+//   xl_dn: 1199px,
+// ) !default;
+
+// // bodyInteractive: in-article elements like sliders, accordions, tabs
+// // bodyAlert: in-article style alert/warning element
+// // modalAlert: pop up alert like a cookie/gdpr warning
+// // scrim/modal: typical modals, separate from modalAlert due to potential marketing value
+
+// $z-layers: (
+//   base: 1,
+//   button: 4,
+//   articleInteractive: 6,
+//   breadcrumbs: 9,
+//   bodyAlert: 10,
+//   header: 12,
+//   tooltip: 14,
+//   modalAlert: 15,
+//   scrim: 17,
+//   modals: 18,
+//   override: 19,
+//   max: 20,
+// ) !default;
+
+/******************************************/
+
+/*******************************************
+******* BRAND/GLOBAL COLORS ****************
+*******************************************/
+$white: #fff;
+$black: #000;
+$lightBlack: #222;
+$darkGray: #444;
+$gray: #888;
+$mediumGray: #aaaaaa;
+$lightGray: #f3f3f3;
+
+$primary: salmon;
+$secondary: #708090;
+
+
+
+
+$blue: #1e90ff;
+$darkBlue: #0022aa;
+$orange: #fab636;
+/******************************************/
+$fontColorBase: $darkGray;
+$fontColorLight: $white;
+
+$linkColor: $blue;
+$linkColorHover: darken($linkColor, 25%);
+
+$buttonPrimaryBackground: $darkBlue;
+$buttonPrimaryBackgroundHover: darken($buttonPrimaryBackground, 25%);
+$buttonPrimaryColor: $white;
+$buttonPrimaryColorHover: $white;
+
+$buttonSecondaryBackground: $orange;
+$buttonSecondaryBackgroundHover: $white;
+$buttonSecondaryColor: $darkGray;
+$buttonSecondaryColorHover: $darkGray;
+
+$tableHighlight: $lightGray;
+
+$focusProperty: outline;
+$focusValue: 3px solid $orange;
+/******************************************/
+
+/*******************************************
+******* COMPOSITION BACKGROUNDS ************
+**** Any colors included in this   *********
+**** map will have composition     *********
+**** fill classes automatically    *********
+**** generated.                    *********
+**** EX. .composition--fill-blue   *********
+*******************************************/
+$fills: (
+	primary: $primary,
+	secondary: $secondary,
+  darkGray: $darkGray,
+  lightGray: $lightGray,
+  blue: $blue,
+);
+/******************************************/
+
+/*******************************************
+******* TYPOGRAPHY *************************
+*******************************************/
+$fontSizeBase: 1rem;
+$lineHeightBase: 1.3;
+$fontWeightLight: 300;
+$fontWeightBase: 400;
+$fontWeightBold: 700;
+$fontFamilyBase: 'Roboto', sans-serif;
+
+$h1Size: 2.25rem;
+$h2Size: 2rem;
+$h3Size: 1.75rem;
+$h4Size: 1.5rem;
+$h5Size: 1.25rem;
+$h6Size: 1rem;
+$lineHeightHeadings: 1.25;
+$fontWeightHeadings: 400;
+$fontFamilyHeadings: 'Roboto Slab', serif;
+/******************************************/

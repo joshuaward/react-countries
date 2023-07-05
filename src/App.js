@@ -1,17 +1,19 @@
 import { useContext, useEffect } from 'react';
-import CountriesContext from './context/index';
+import CountryContext from './context/index';
 
 // components
 import Loader from './components/Loader';
-import CountriesList from './components/CountriesList';
+import CountryList from './components/CountryList';
 
 function App() {
-  const { isLoading, fetchCountries } = useContext(CountriesContext);
+  const { isLoading, fetchCountries } = useContext(CountryContext);
 
 
   useEffect(() => {
     console.log(isLoading);
-    fetchCountries();
+    setTimeout(() => {
+			fetchCountries();
+		}, 5000);
   },[]);
 
   return (
@@ -19,7 +21,9 @@ function App() {
       { isLoading ?
         <Loader />
         :
-        <CountriesList />
+        <div className="container">
+					<CountryList />
+				</div>
       }
     </div>
   );

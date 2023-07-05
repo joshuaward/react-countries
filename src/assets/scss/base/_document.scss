@@ -1,0 +1,73 @@
+// --------------------------------------------
+// Document level styles
+// --------------------------------------------
+
+:root {
+  @each $bp, $value in $breakpoints {
+    --#{"" + $bp}: #{$value};
+  }
+  @each $name, $color in $fills {
+    --fill-#{"" + $name}: #{$color};
+  }
+}
+
+html {
+  font-size: $rootEM;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: $fontSizeBase;
+  line-height: $lineHeightBase;
+  font-family: $fontFamilyBase;
+  font-weight: $fontWeightBase;
+  color: $fontColorBase;
+  max-width: 100%;
+  overflow-x: hidden;
+	// background: red !important;
+
+  // &:where(.using-mouse) {
+  //   *:focus {
+  //     outline: none;
+  //   }
+  // }
+
+  // &:where(:not(.using-mouse)) {
+  //   *:focus {
+  //     outline: none;
+  //     #{$focusProperty}: $focusValue;
+  //   }
+  // }
+}
+
+.sr-only {
+  @include hideVisually;
+}
+
+*:where(img) {
+  max-width: 100%;
+  &:where([height]) {
+    height: auto;
+  }
+  &:where([width]) {
+    width: auto;
+  }
+  &:where([style*='--height'][style*='--width']) {
+    aspect-ratio: var(--width) / var(--height);
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
