@@ -19,14 +19,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		top: 0.5rem;
-		right: 0.5rem;
+		top: -2.5rem;
+		right: -0.5rem;
 		width: 2.5rem;
 		height: 2.5rem;
 		background: transparent;
 		border: none;
 		transition: transform 0.35s ease-in-out;
 		cursor: pointer;
+		z-index: 9;
 
 		&:hover {
 			transform: rotate(360deg);
@@ -37,7 +38,7 @@
 			content: '';
 			width: 0.125rem;
 			height: 1.875rem;
-			background: black;
+			background: white;
 		}
 
 		&::before {
@@ -74,8 +75,6 @@
 
 	&__content {
 		position: relative;
-		display: flex;
-		flex-direction: column;
 		width: 100%;
 		max-width: 80vw;
 		// height: 95vh;
@@ -88,6 +87,21 @@
 			max-width: 51.875rem;
 			// width: auto;
 		}
+	}
+
+	&__sections {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+
+		@media (min-width: 992px) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&__section {
+		position: relative;
+		flex: 0 0 50%;
 	}
 
 	&__header {

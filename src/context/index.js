@@ -4,7 +4,8 @@ import axios from 'axios';
 const CountryContext = createContext();
 
 const CountriesProvider = ({ children }) => {
-	const endpoint = 'https://restcountries.com/v3.1/all?fields=name,flag,flags,capital,maps,region,population,';
+	// const endpoint = 'https://restcountries.com/v3.1/all';
+	const endpoint = 'https://restcountries.com/v3.1/all?fields=name,flag,flags,capital,maps,region,population,latlng,region,unMember,independent,subregion';
 	const [isLoading, setIsLoading] = useState(true);
 	const [countries, setCountries] = useState([]);
 
